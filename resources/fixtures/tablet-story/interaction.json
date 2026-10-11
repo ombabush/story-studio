@@ -1,0 +1,327 @@
+{
+  "profile": "story-interaction/1.0-draft.1",
+  "storyId": "STORY_LIGHTHOUSE_DEMO",
+  "revision": "sha256:f86ed4db07e6a229e52276c218ef811e3d6be1d74ef51a941ddace20616fcef6",
+  "language": "ru",
+  "assets": [
+    {
+      "id": "ARTWORK_PIER",
+      "path": "assets/pier.png",
+      "mediaType": "image/png",
+      "sha256": "deedb4f978519e0020a02ad9f682700528dee4d742638c7f50a3d932d4ddbf92",
+      "width": 800,
+      "height": 1100
+    },
+    {
+      "id": "ARTWORK_LIGHTHOUSE",
+      "path": "assets/lighthouse.png",
+      "mediaType": "image/png",
+      "sha256": "234826a17b2b5ff784f90b65f51bcb9910fd7b93d210a52a39fed93e10a1fb5f",
+      "width": 800,
+      "height": 1100
+    }
+  ],
+  "cards": [
+    {
+      "id": "CHARACTER_ILYA",
+      "kind": "character",
+      "title": {
+        "ru": "Илья",
+        "en": "Ilya"
+      },
+      "body": {
+        "ru": "Новый смотритель маяка. Это только разрешённая читателю справка.",
+        "en": "The new lighthouse keeper. Only reader-approved information."
+      }
+    },
+    {
+      "id": "SHELL_NOTE",
+      "kind": "note",
+      "title": {
+        "ru": "Ракушка",
+        "en": "The shell"
+      },
+      "body": {
+        "ru": "Маленькая область специально проверяет touch assistance и chooser.",
+        "en": "This small region tests touch assistance and the chooser."
+      }
+    },
+    {
+      "id": "CAPTAIN_NOTE",
+      "kind": "note",
+      "title": {
+        "ru": "До весны",
+        "en": "Until spring"
+      },
+      "body": {
+        "ru": "Пояснение/перевод показывается отдельно, не меняет исходную реплику.",
+        "en": "Explanation and translation do not mutate the source speech."
+      }
+    }
+  ],
+  "pages": [
+    {
+      "id": "BOOK_01_CHAPTER_01_PIER",
+      "surface": {
+        "assetId": "ARTWORK_PIER"
+      },
+      "groups": [
+        {
+          "id": "PIER_CHOICES",
+          "label": {
+            "ru": "Продолжить историю",
+            "en": "Continue the story"
+          }
+        }
+      ],
+      "anchors": [
+        {
+          "id": "PIER_DETAIL",
+          "shape": {
+            "type": "rect",
+            "x": 400,
+            "y": 580,
+            "width": 240,
+            "height": 220
+          }
+        }
+      ],
+      "protectedAreas": [
+        {
+          "type": "rect",
+          "x": 35,
+          "y": 65,
+          "width": 280,
+          "height": 110
+        },
+        {
+          "type": "rect",
+          "x": 35,
+          "y": 880,
+          "width": 750,
+          "height": 85
+        }
+      ],
+      "textBlocks": [
+        {
+          "id": "PIER_CAPTION",
+          "runs": [
+            {
+              "id": "PIER_CAPTION_ILYA",
+              "text": "Илья"
+            },
+            {
+              "id": "PIER_CAPTION_REST",
+              "text": " остался на причале."
+            }
+          ]
+        }
+      ],
+      "interactions": [
+        {
+          "id": "PIER_ILYA_PROFILE",
+          "kind": "character",
+          "label": {
+            "ru": "Узнать про Илью",
+            "en": "About Ilya"
+          },
+          "anchor": {
+            "type": "region",
+            "shape": {
+              "type": "path",
+              "d": "M 450 90 L 550 90 L 565 170 L 615 330 L 600 680 L 570 790 L 520 790 L 500 650 L 480 790 L 430 790 L 395 680 L 390 350 L 435 220 Z M 410 380 L 445 380 L 445 550 L 415 590 Z",
+              "fillRule": "evenodd"
+            }
+          },
+          "action": {
+            "type": "open-card",
+            "cardId": "CHARACTER_ILYA"
+          },
+          "order": 0,
+          "presentation": {
+            "preferredEffect": "outline"
+          }
+        },
+        {
+          "id": "PIER_TO_LIGHTHOUSE",
+          "kind": "nav",
+          "label": {
+            "ru": "Пройти к маяку",
+            "en": "Go to the lighthouse"
+          },
+          "anchor": {
+            "type": "region",
+            "shape": {
+              "type": "polygon",
+              "points": [
+                [
+                  710,
+                  300
+                ],
+                [
+                  920,
+                  300
+                ],
+                [
+                  955,
+                  355
+                ],
+                [
+                  920,
+                  410
+                ],
+                [
+                  710,
+                  410
+                ]
+              ]
+            }
+          },
+          "action": {
+            "type": "jump",
+            "pageId": "BOOK_01_CHAPTER_01_LIGHTHOUSE"
+          },
+          "importance": "essential",
+          "groupId": "PIER_CHOICES",
+          "order": 1,
+          "presentation": {
+            "preferredEffect": "brackets"
+          }
+        },
+        {
+          "id": "PIER_STAY",
+          "kind": "nav",
+          "label": {
+            "ru": "Остаться на причале",
+            "en": "Stay at the pier"
+          },
+          "anchor": {
+            "type": "region",
+            "shape": {
+              "type": "rect",
+              "x": 720,
+              "y": 450,
+              "width": 220,
+              "height": 95
+            }
+          },
+          "action": {
+            "type": "jump",
+            "pageId": "BOOK_01_CHAPTER_01_PIER",
+            "anchorId": "PIER_DETAIL"
+          },
+          "importance": "essential",
+          "groupId": "PIER_CHOICES",
+          "order": 2
+        },
+        {
+          "id": "PIER_SHELL_NOTE",
+          "kind": "object",
+          "label": {
+            "ru": "Ракушка — заметка",
+            "en": "A note about the shell"
+          },
+          "anchor": {
+            "type": "region",
+            "shape": {
+              "type": "ellipse",
+              "cx": 599,
+              "cy": 633,
+              "rx": 13,
+              "ry": 12
+            }
+          },
+          "action": {
+            "type": "open-card",
+            "cardId": "SHELL_NOTE"
+          },
+          "order": 3,
+          "presentation": {
+            "preferredEffect": "soft-focus"
+          }
+        },
+        {
+          "id": "PIER_CAPTAIN_NOTE",
+          "kind": "note",
+          "label": {
+            "ru": "Пояснение реплики",
+            "en": "Speech explanation"
+          },
+          "anchor": {
+            "type": "region",
+            "shape": {
+              "type": "rect",
+              "x": 35,
+              "y": 65,
+              "width": 280,
+              "height": 110
+            },
+            "outline": {
+              "type": "polygon",
+              "points": [
+                [
+                  35,
+                  65
+                ],
+                [
+                  315,
+                  65
+                ],
+                [
+                  315,
+                  175
+                ],
+                [
+                  185,
+                  175
+                ],
+                [
+                  160,
+                  195
+                ],
+                [
+                  160,
+                  175
+                ],
+                [
+                  35,
+                  175
+                ]
+              ]
+            }
+          },
+          "action": {
+            "type": "open-card",
+            "cardId": "CAPTAIN_NOTE"
+          },
+          "order": 4
+        },
+        {
+          "id": "PIER_ILYA_TEXT_LINK",
+          "kind": "character",
+          "label": {
+            "ru": "Илья — справка",
+            "en": "Ilya — profile"
+          },
+          "anchor": {
+            "type": "text",
+            "blockId": "PIER_CAPTION",
+            "runId": "PIER_CAPTION_ILYA"
+          },
+          "action": {
+            "type": "open-card",
+            "cardId": "CHARACTER_ILYA"
+          },
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "BOOK_01_CHAPTER_01_LIGHTHOUSE",
+      "surface": {
+        "assetId": "ARTWORK_LIGHTHOUSE"
+      },
+      "interactions": []
+    }
+  ]
+}

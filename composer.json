@@ -1,0 +1,57 @@
+{
+    "name": "ombabush/story-studio",
+    "description": "Story Studio — a full-stack Laravel package for paged stories (comics, manga, illustrated books): Reader + Studio editor on one core.",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "livewire",
+        "comics",
+        "manga",
+        "reader",
+        "story",
+        "medialibrary"
+    ],
+    "homepage": "https://github.com/ombabush/story-studio",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/ombabush/story-studio/issues",
+        "source": "https://github.com/ombabush/story-studio"
+    },
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^12.0",
+        "illuminate/database": "^12.0",
+        "livewire/livewire": "^3.5",
+        "kalnoy/nestedset": "^6.0",
+        "spatie/laravel-medialibrary": "^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0",
+        "phpunit/phpunit": "^11.5"
+    },
+    "suggest": {
+        "ext-gd": "Only for story-studio:demo, which draws its sample pages",
+        "ext-zip": "CBZ / ZIP upload"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ombabush\\StoryStudio\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ombabush\\StoryStudio\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ombabush\\StoryStudio\\StoryStudioServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "test": "phpunit"
+    }
+}

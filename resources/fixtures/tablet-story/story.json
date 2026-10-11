@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "story": {
+    "id": "STORY_LIGHTHOUSE_DEMO",
+    "title": "Смотритель — schematic fixture",
+    "authors": [
+      "Story Reader specification"
+    ],
+    "description": "Neutral contract fixture; not production comic art.",
+    "direction": "ltr",
+    "settings": {}
+  },
+  "nodes": [
+    {
+      "id": "BOOK_01",
+      "parent": null,
+      "kind": "volume",
+      "title": "Книга первая"
+    },
+    {
+      "id": "BOOK_01_CHAPTER_01",
+      "parent": "BOOK_01",
+      "kind": "chapter",
+      "title": "Причал и маяк"
+    }
+  ],
+  "pages": [
+    {
+      "id": "BOOK_01_CHAPTER_01_PIER",
+      "node": "BOOK_01_CHAPTER_01",
+      "type": "image",
+      "caption": "Илья остался на причале.",
+      "body": "Илья остался на причале.",
+      "alt": "Илья остался на причале.",
+      "time_label": null,
+      "time_rank": null,
+      "time_place": null,
+      "time_who": null,
+      "hints": {},
+      "regions": [],
+      "image": {
+        "sha1": "09f296752bf723f6a52895ec7a6aefe5d52fea33",
+        "name": "pier.png",
+        "width": 800,
+        "height": 1100
+      }
+    },
+    {
+      "id": "BOOK_01_CHAPTER_01_LIGHTHOUSE",
+      "node": "BOOK_01_CHAPTER_01",
+      "type": "image",
+      "caption": "Маяк",
+      "body": "Он поднялся к маяку.",
+      "alt": "Маяк",
+      "time_label": null,
+      "time_rank": null,
+      "time_place": null,
+      "time_who": null,
+      "hints": {},
+      "regions": [],
+      "image": {
+        "sha1": "d974218bc69553c1718b6db67f58b13b3c1e0dde",
+        "name": "lighthouse.png",
+        "width": 800,
+        "height": 1100
+      }
+    }
+  ]
+}

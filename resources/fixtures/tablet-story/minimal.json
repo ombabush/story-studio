@@ -1,0 +1,67 @@
+{
+  "profile": "story-interaction/1.0-draft.1",
+  "storyId": "STORY_LIGHTHOUSE_DEMO",
+  "revision": "sha256:f86ed4db07e6a229e52276c218ef811e3d6be1d74ef51a941ddace20616fcef6",
+  "language": "ru",
+  "assets": [
+    {
+      "id": "ARTWORK_PIER",
+      "path": "assets/pier.png",
+      "mediaType": "image/png",
+      "sha256": "deedb4f978519e0020a02ad9f682700528dee4d742638c7f50a3d932d4ddbf92",
+      "width": 800,
+      "height": 1100
+    }
+  ],
+  "cards": [
+    {
+      "id": "CHARACTER_ILYA",
+      "kind": "character",
+      "title": {
+        "ru": "Илья",
+        "en": "Ilya"
+      },
+      "body": {
+        "ru": "Новый смотритель маяка. Это только разрешённая читателю справка.",
+        "en": "The new lighthouse keeper. Only reader-approved information."
+      }
+    }
+  ],
+  "pages": [
+    {
+      "id": "BOOK_01_CHAPTER_01_PIER",
+      "surface": {
+        "assetId": "ARTWORK_PIER"
+      },
+      "interactions": [
+        {
+          "id": "PIER_ILYA_PROFILE",
+          "kind": "character",
+          "label": {
+            "ru": "Узнать про Илью",
+            "en": "About Ilya"
+          },
+          "anchor": {
+            "type": "region",
+            "shape": {
+              "type": "rect",
+              "x": 380,
+              "y": 80,
+              "width": 245,
+              "height": 720
+            },
+            "outline": {
+              "type": "path",
+              "d": "M 450 90 L 550 90 L 565 170 L 615 330 L 600 680 L 570 790 L 520 790 L 500 650 L 480 790 L 430 790 L 395 680 L 390 350 L 435 220 Z M 410 380 L 445 380 L 445 550 L 415 590 Z",
+              "fillRule": "evenodd"
+            }
+          },
+          "action": {
+            "type": "open-card",
+            "cardId": "CHARACTER_ILYA"
+          }
+        }
+      ]
+    }
+  ]
+}
